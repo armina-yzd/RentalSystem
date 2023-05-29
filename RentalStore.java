@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class RentalStore {
     int id;
@@ -35,45 +34,48 @@ public class RentalStore {
     public ArrayList<Movie> getAvailableMovies(){
         return movies;
     }
-    public void rentMovie(Movie movie,Customer customer){
-        int index = -1;
-        for(int i=0;i< movies.size();i++){
-            if(movies.get(i).equals(movie)){
-                index=0;
-                break;
-            }
-        }
-        if(index==-1){
-            System.out.println("sorry, we don't have this movie");
-            return;
-        }
-        if(movie.isAvailable()==false){
-            System.out.println("this movie is not available");
-        }else {
-            movie.setAvailable(false);
-            System.out.println("you rented this movie");
-        }
+    // public void rentMovie(Movie movie,Customer customer){
+    //     int index = -1;
+    //     for(int i=0;i< movies.size();i++){
+    //         if(movies.get(i).equals(movie)){
+    //             index=0;
+    //             break;
+    //         }
+    //     }
+    //     if(index==-1){
+    //         System.out.println("sorry, we don't have this movie");
+    //         return;
+    //     }
+    //     if(movie.isAvailable()==false){
+    //         System.out.println("this movie is not available");
+    //     }else {
+    //         movie.setAvailable(false);
+    //         System.out.println("you rented this movie");
+    //     }
 
-    }
-    public void returnMovie(Rental rental){
+    // }
+    // public void returnMovie(Rental rental){
 
 
-    }
-//    public Customer getCustomerById(int id){
-//
-//        for(int i=0;i<customers.size();i++){
-//            if(customers.get(i).getId()==id){
-//                return customers.get(i);
-//            }
-//        }
-//        System.out.println("id not found");
-//    }
-//    public Movie getMovieById(int id){
-//        for(int i=0;i<movies.size();i++){
-//            if(movies.get(i).getId()==id){
-//                return movies.get(i);
-//            }
-//        }
-//       System.out.println("id not found");
-//    }
+    // }
+   public Customer getCustomerById(int id){
+
+       for(int i=0;i<customers.size();i++){
+           if(customers.get(i).getId()==id){
+               return customers.get(i);
+           }
+       }
+       System.out.println("id not found");
+       return null;
+
+   }
+   public Movie getMovieById(int id){
+       for(int i=0;i<movies.size();i++){
+           if(movies.get(i).getId()==id){
+               return movies.get(i);
+           }
+       }
+      System.out.println("id not found");
+      return null;
+   }
 }
