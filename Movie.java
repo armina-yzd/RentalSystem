@@ -4,29 +4,25 @@ public class Movie extends Item {
 
     private String director;
     private String cast;
-    private boolean available;
-    public Movie(String title,String genre,String director,String cast,Date releaseDate,int id){
-        this.title=title;
-        this.genre=genre;
-        this.director=director;
-        this.cast=cast;
-        this.releaseDate=releaseDate;
-        this.id=id;
-        available=true;
+    
+    public Movie(String title, String genre, Date releaseDate, int id, double rentalFee, String director, String cast) {
+        super(title, genre, releaseDate, id, rentalFee);
+        this.director = director;
+        this.cast = cast;
     }
-
+    
     public String getDirector() {
         return director;
+    }
+    public void setDirector(String director) {
+        this.director = director;
     }
     public String getCast() {
         return cast;
     }
-
-
-    public boolean isAvailable() {
-        return available;
+    public void setCast(String cast) {
+        this.cast = cast;
     }
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
+    
+   
 }

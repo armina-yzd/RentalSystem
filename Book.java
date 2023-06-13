@@ -1,29 +1,30 @@
 import java.util.Date;
 
-public class Book extends Item{
+public class Book extends Item {
     private String author;
     private String publisher;
-    private boolean avail;
 
-    public Book(String title, String genre, String author, String publisher, Date releaseDate, int id){
-        this.title=title;
-        this.genre=genre;
-        this.author=author;
-        this.publisher=publisher;
-        this.releaseDate=releaseDate;
-        this.id=id;
-        avail=true;
+    public Book(String title, String genre, Date releaseDate, int id, double rentalFee, String author,
+            String publisher) {
+        super(title, genre, releaseDate, id, rentalFee);
+        this.author = author;
+        this.publisher = publisher;
     }
-    public String getPublisher() {
-        return publisher;
-    }
+
     public String getAuthor() {
         return author;
     }
-    public boolean isAvail() {
-        return avail;
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
-    public void setAvail(boolean avail) {
-        this.avail = avail;
+
+    public String getPublisher() {
+        return publisher;
     }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
 }

@@ -1,29 +1,30 @@
 import java.util.Date;
 
-public class Game extends Item{
+public class Game extends Item {
     private String platform;
     private String publisher;
-    private boolean avail;
-    public Game(String title, String genre, String platform, String publisher, Date releaseDate, int id){
-        this.title=title;
-        this.genre=genre;
-        this.platform=platform;
-        this.publisher=publisher;
-        this.releaseDate=releaseDate;
-        this.id=id;
-        avail=true;
+
+    public Game(String title, String genre, Date releaseDate, int id, double rentalFee, String platform,
+            String publisher) {
+        super(title, genre, releaseDate, id, rentalFee);
+        this.platform = platform;
+        this.publisher = publisher;
     }
+
     public String getPlatform() {
         return platform;
     }
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
+
     public String getPublisher() {
         return publisher;
     }
-    public boolean isAvail() {
-        return avail;
-    }
-    public void setAvail(boolean avail) {
-        this.avail = avail;
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 
 }

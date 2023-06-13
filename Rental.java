@@ -3,43 +3,19 @@ import java.util.Date;
 
 public class Rental {
     private int id;
-    private Movie movie;
-    private Book book;
-    private Game game;
+    private Item item;
     private Customer customer;
     Date rentalDate = new Date();
     Date returnDate = new Date();
-    
-    public Rental(Movie movie,Customer customer){
-        this.movie=movie;
-        this.customer=customer;
+
+    public Rental(Item item, Customer customer) {
+        this.item = item;
+        this.customer = customer;
         LocalDate today = LocalDate.now();
         LocalDate returnday = today.plusDays(10);
 
         rentalDate = java.sql.Date.valueOf(today);
-        returnDate =  java.sql.Date.valueOf(returnday);
-
-    }
-    
-    public Rental(Book book,Customer customer){
-        this.book=book;
-        this.customer=customer;
-        LocalDate today = LocalDate.now();
-        LocalDate returnday = today.plusDays(10);
-
-        rentalDate = java.sql.Date.valueOf(today);
-        returnDate =  java.sql.Date.valueOf(returnday);
-
-    }
-    
-    public Rental(Game game,Customer customer){
-        this.game=game;
-        this.customer=customer;
-        LocalDate today = LocalDate.now();
-        LocalDate returnday = today.plusDays(10);
-
-        rentalDate = java.sql.Date.valueOf(today);
-        returnDate =  java.sql.Date.valueOf(returnday);
+        returnDate = java.sql.Date.valueOf(returnday);
 
     }
 
@@ -51,28 +27,8 @@ public class Rental {
         this.id = id;
     }
 
-    public Movie getMovie() {
-        return movie;
-    }
-
-    public void setMovie(Movie movie) {
-        this.movie = movie;
-    }
-
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
+    public Item getItem() {
+        return item;
     }
 
     public Customer getCustomer() {
@@ -98,9 +54,5 @@ public class Rental {
     public void setReturnDate(Date returnDate) {
         this.returnDate = returnDate;
     }
-    
-    
-
 
 }
-
